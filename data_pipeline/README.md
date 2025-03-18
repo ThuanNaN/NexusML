@@ -68,7 +68,7 @@ Enter Kafka container
 docker exec -it kafka /bin/bash
 ```
 
-Maker sure it turn on container cmd: `[appuser@f8d588076eb7 ~]$`
+Maker sure it turn on container cmd: `[appuser@f8d588076eb7 ~]$`  
 Create kafka topic
 
 ```bash
@@ -94,6 +94,7 @@ Create a PostgreSQL server and change database parameter in file consumer/main.p
 ### 5. Running Python Code
 
 Before running code, make sure you set the `PYTHONPATH` to `data_pipeline`, `data_pipeline/crawler`
+
 First, running code consumer to wait message from kafka
 
 ```bash
