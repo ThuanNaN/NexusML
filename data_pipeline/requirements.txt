@@ -5,3 +5,4 @@ threading
 kafka-python
 schedule
 pillow
+psycopg2
