@@ -36,3 +36,18 @@ This project aims to provide a generalized MLOps solution that supports various 
 git clone 
 ```
 
+## Future Roadmap
+
+- [ ] Data pipeline
+- [ ] Model Serving
+- [ ] Continuous Monitoring
+- [ ] CI/CD for MLOps
+- [ ] Scalability & Flexibility
+
+## Contributions
+
+Contributions are welcome! Feel free to open an issue or submit a pull request to improve NexusML.
+
+## License
+
+MIT License – Free to use and modify for any project.
