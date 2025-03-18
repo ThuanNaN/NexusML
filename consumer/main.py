@@ -24,11 +24,11 @@ KAFKA_BOOTSTRAP_SERVERS = 'localhost:9092'
 
 # Database configuration
 DB_CONFIG = {
-    'dbname': 'dataset',
-    'user': 'postgres',
-    'password': '123456',
-    'host': 'localhost',
-    'port': 5432
+    'dbname': 'dataset',         # Your specific ip address
+    'user': 'postgres',          # Your database's name
+    'password': '123456',        # Your account name
+    'host': 'localhost',         # Your password
+    'port': 5432                 # Your pgAdmin port (default 5432)
 }
 
 # Processing configuration

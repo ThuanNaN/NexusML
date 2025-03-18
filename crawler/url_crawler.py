@@ -35,7 +35,7 @@ class GetImagesfromPages:
             if not img_url:
                 continue
             # img_url = urljoin(url, img_url)
-            img_url = img_url.replace("grid", "large-previews")
+            img_url = img_url.replace("grid", "img_url")
             try:
                 pos = img_url.index("?")
                 img_url = img_url[:pos]

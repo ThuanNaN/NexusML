@@ -2,13 +2,13 @@ import psycopg2
 import numpy as np
 import matplotlib.pyplot as plt
 
-# Database connection parameters
+# Database connection
 db_params = {
-    "host": "localhost",
-    "database": "dataset",
-    "user": "postgres",
-    "password": "123456",
-    "port": "5432"
+    "host": "localhost",     # Your specific ip address
+    "database": "dataset",   # Your database's name
+    "user": "postgres",      # Your account name
+    "password": "123456",    # Your password
+    "port": "5432"           # Your pgAdmin port (default 5432) 
 }
 
 try:
