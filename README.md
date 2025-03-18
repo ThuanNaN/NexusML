@@ -1,9 +1,38 @@
-# Inject any Machine Learning Model into MLOps Pipeline
+# NexusML – A Simple MLOps Framework
 
-## 1. Usage
+## Overview
 
-### Installation
+NexusML is a highly modular and scalable MLOps framework designed to integrate deep learning models seamlessly into end-to-end machine learning pipelines. Unlike traditional approaches where the model dominates the workflow, NexusML treats the model as a central yet interchangeable component within a robust ecosystem of data pipelines, serving pipelines, and monitoring pipelines.
 
-### Quick Start
+This project aims to provide a generalized MLOps solution that supports various machine learning models, enabling easy adaptation across different domains and architectures.
 
-## 2. Reference
+## Key Features
+
+:white_check_mark: Modular Design – Easily swap different models while keeping the MLOps pipeline intact.
+
+:white_check_mark: Data Pipeline Integration – Supports real-time and batch data processing with Kafka, Airflow, and PostgreSQL.
+
+:white_check_mark: Model Serving – Deploy models efficiently with FastAPI, optimized for both batch inference and real-time predictions.
+
+:white_check_mark: Continuous Monitoring – Track performance, detect data drift, and log experiments using Prometheus, Grafana, Loki, and MLflow.
+
+:white_check_mark: CI/CD for MLOps – Automate deployment and model retraining with GitHub Actions, Jenkins, and MLflow Model Registry.
+
+:white_check_mark: Scalability & Flexibility – Designed for deep learning, but extensible for any ML model, from classical to transformer-based architectures.
+
+## Tech Stack
+
+- Orchestration: Airflow, Jenkins
+- Data Streaming & Storage: Kafka, PostgreSQL, MinIO
+- Model Serving: FastAPI, TensorFlow Serving, TorchServe
+- Monitoring & Logging: Prometheus, Grafana, Loki, MLflow
+- CI/CD & Deployment: Docker, Kubernetes, GitHub Actions
+
+## Getting Started
+
+### 1. Clone the repository
+
+```bash
+git clone 
+```
+
