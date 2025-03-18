@@ -1,0 +1,7 @@
+urllib
+bs4
+time
+threading
+kafka-python
+schedule
+pillow
