@@ -1,59 +1,65 @@
 #!/bin/bash
 
-# Function to start (up) a specific service
-up_service() {
-    local service=$1
-    echo "Starting $service..."
-    cd ./$service || { echo "Service $service not found!"; exit 1; }
+# Start all Docker Compose services
+start_services() {
+    echo "Starting services..."
+
+    # Start mlflow
+    cd ./mlflow
     docker compose up -d --build
-    cd - >/dev/null
-}
+    cd ..
 
-# Function to stop (down) a specific service
-down_service() {
-    local service=$1
-    echo "Stopping $service..."
-    cd ./$service || { echo "Service $service not found!"; exit 1; }
-    docker compose down
-    cd - >/dev/null
-}
+    # Start airflow
+    cd ./airflow
+    docker compose up -d --build
+    cd ..
 
-# Function to start (up) all services
-up_all() {
-    for service in mlflow airflow jenkins monitor; do
-        up_service $service
-    done
+    # Start jenkins
+    cd ./jenkins
+    docker compose up -d --build
+    cd ..
+
+    # Start monitoring
+    cd ./monitor
+    docker compose up -d --build
+    cd ..
+
     echo "All services have been started."
 }
 
-# Function to stop (down) all services
-down_all() {
-    for service in airflow mlflow jenkins monitor; do
-        down_service $service
-    done
+# Stop all Docker Compose services
+stop_services() {
+    echo "Shutting down services..."
+
+    # Stop airflow
+    cd ./airflow
+    docker compose down
+    cd ..
+
+    # Stop mlflow
+    cd ./mlflow
+    docker compose down
+    cd ..
+
+    # Stop jenkins
+    cd ./jenkins
+    docker compose down
+    cd ..
+
+    # Stop monitoring
+    cd ./monitor
+    docker compose down
+    cd ..
+
     echo "All services have been shut down."
 }
 
-# Check command-line arguments
-if [ "$1" == "up" ]; then
-    if [ "$2" == "all" ]; then
-        up_all
-    elif [ -n "$2" ]; then
-        up_service "$2"
-    else
-        echo "Usage: $0 up {service_name|all}"
-        exit 1
-    fi
-elif [ "$1" == "down" ]; then
-    if [ "$2" == "all" ]; then
-        down_all
-    elif [ -n "$2" ]; then
-        down_service "$2"
-    else
-        echo "Usage: $0 down {service_name|all}"
-        exit 1
-    fi
+# Check the argument to decide whether to start or stop services
+if [ "$1" == "start" ]; then
+    start_services
+elif [ "$1" == "stop" ]; then
+    stop_services
 else
-    echo "Usage: $0 {up|down} {service_name|all}"
+    echo "Usage: $0 {start|stop}"
     exit 1
 fi
