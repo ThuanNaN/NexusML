@@ -1,5 +1,0 @@
-seed: 2
-device: cpu
-latent_dim: 128
-num_epochs: 10
-data_dir: ./dataset

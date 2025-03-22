@@ -1,0 +1,13 @@
+services:
+  postgres:
+    image: postgres:latest
+    container_name: postgres_image_db
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: aivn2025
+      POSTGRES_DB: image_db
+    ports:
+      - "5454:5432"
+    volumes:
+      - ./postgres_data:/var/lib/postgresql/data

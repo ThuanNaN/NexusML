@@ -24,6 +24,16 @@ start_services() {
     docker compose up -d --build
     cd ..
 
+    # Start psql
+    cd ./psql_img
+    docker compose up -d --build
+    cd ..
+
+    # Start Kafka
+    cd ./kafka
+    docker compose up -d --build
+    cd ..
+
     echo "All services have been started."
 }
 
@@ -48,6 +58,16 @@ stop_services() {
 
     # Stop monitoring
     cd ./monitor
+    docker compose down
+    cd ..
+
+    # Stop psql
+    cd ./psql_img
+    docker compose down
+    cd ..
+
+    # Stop Kafka
+    cd ./kafka
     docker compose down
     cd ..
 
