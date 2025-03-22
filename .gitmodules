@@ -1,0 +1,3 @@
+[submodule "training_pipeline/mlops-dags-actions"]
+	path = training_pipeline/mlops-dags-actions
+	url = https://github.com/ThuanNaN/mlops-dags-actions.git
