@@ -1,3 +1,4 @@
+import numpy as np
 import os
 import io
 from PIL import Image
@@ -14,19 +15,15 @@ logger = logging.getLogger(__name__)
 
     
 def convert_image_to_binary(pil_image):
-    buffer = io.BytesIO()
-    pil_image.save(buffer, format="PNG")
-    return buffer.getvalue()
+    return np.asarray(pil_image).tobytes()
 
 def convert_image_to_grey(pil_image):
     image = pil_image.convert("L")
-    buffer = io.BytesIO()
-    image.save(buffer, format="PNG")
-    return buffer.getvalue()
+    return np.asarray(image).tobytes()
 
 # Function to save image to database
 def save_image_to_db(image_path):
-    pil_image = Image.open(image_path).resize(TARGET_SIZE)
+    pil_image = Image.open(image_path).convert("RGB").resize(TARGET_SIZE)
     color_img = convert_image_to_binary(pil_image)
     grey_img = convert_image_to_grey(pil_image)
     image = SourceImage(
