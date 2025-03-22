@@ -87,9 +87,11 @@ If everything is ok, exit
 exit
 ```
 
-### 4. Set up PostgreSQL Server
+### 4. Exec PostgreSQL via `psql`
 
-Create a PostgreSQL server and change database parameter in file consumer/main.py to make sure the connection will establish successfully.
+```python
+psql -h localhost -U postgres -d image_db -p 5454
+```
 
 ### 5. Running Python Code
 
