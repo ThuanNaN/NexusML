@@ -33,7 +33,9 @@ This project aims to provide a generalized MLOps solution that supports various 
 ### 1. Clone the repository
 
 ```bash
-git clone 
+git clone https://github.com/ThuanNaN/NexusML.git
+
+git submodule update --init --recursive
 ```
 
 ## Future Roadmap
