@@ -53,14 +53,3 @@ Contributions are welcome! Feel free to open an issue or submit a pull request t
 ## License
 
 MIT License – Free to use and modify for any project.
-
-
-
-git submodule update --init --recursive
-
-jenkins: 44129f95515a48d3a0ceb3790b3136b7
-jenkins - aivn2025
-
-ngrok: 19522312@gm.uit.edu.vn
-url: https://known-husky-allegedly.ngrok-free.app
-plugin: 
