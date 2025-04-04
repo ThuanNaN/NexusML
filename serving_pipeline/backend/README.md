@@ -94,3 +94,25 @@ API access is secured using API keys. Configure your keys in the `.env` file or 
 1. YOLOv8 for object detection
 2. Stable Diffusion models:
    - Stable Diffusion XL (SSD-1B)
+
+## Testing
+
+Pytest is used for unit testing. Run the tests with:
+
+```bash
+pip install -r requirements-dev.txt
+
+# Run the tests
+pytest
+
+# For coverage report
+coverage run -m pytest
+coverage report
+coverage html  # Generates HTML report
+```
+
+Serve test coverage report with:
+
+```bash
+python -m http.server --directory htmlcov
+```
